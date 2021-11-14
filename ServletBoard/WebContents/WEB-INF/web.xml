@@ -4,4 +4,36 @@
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
+  <servlet>
+  	<servlet-name>boardView</servlet-name>
+  	<servlet-class>com.board.controller.BoardView</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>boardView</servlet-name>
+  	<url-pattern>/board/view</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>boardInsert</servlet-name>
+  	<servlet-class>com.board.controller.BoardInsert</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>boardInsert</servlet-name>
+  	<url-pattern>/board/insert</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>boardUpdate</servlet-name>
+  	<servlet-class>com.board.controller.BoardUpdate</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>boardUpdate</servlet-name>
+  	<url-pattern>/board/update</url-pattern>
+  </servlet-mapping>
+  <servlet>
+  	<servlet-name>boardDelete</servlet-name>
+  	<servlet-class>com.board.controller.BoardDelete</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>boardDelete</servlet-name>
+  	<url-pattern>/board/delete</url-pattern>
+  </servlet-mapping>
 </web-app>

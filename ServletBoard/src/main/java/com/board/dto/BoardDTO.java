@@ -8,6 +8,10 @@ public class BoardDTO {
 	private Date boardDate;
 	private String boardWriter;
 	private String boardContent;
+	
+	public BoardDTO() {
+		
+	}
 
 	public BoardDTO(int boardIndex, String boardTitle, Date boardDate, String boardWriter, String boardContent) {
 		this.boardIndex = boardIndex;

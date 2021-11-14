@@ -44,7 +44,7 @@
 			</tbody>
 		</table>
 		
-		<button type="button" class="btn btn-dark">글쓰기</button>
+		<button type="button" class="btn btn-dark" onclick='location.href="/board/insertForm"'>글쓰기</button>
 	</div>
 </body>
 </html>

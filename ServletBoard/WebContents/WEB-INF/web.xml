@@ -4,13 +4,23 @@
   <welcome-file-list>
     <welcome-file>/WEB-INF/view/board/index.jsp</welcome-file>
   </welcome-file-list>
+  <!-- jsp -->
+  <servlet>
+  	<servlet-name>insertForm</servlet-name>
+  	<jsp-file>/WEB-INF/view/board/insertForm.jsp</jsp-file>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>insertForm</servlet-name>
+  	<url-pattern>/board/insertForm</url-pattern>
+  </servlet-mapping>
+  <!-- servlet -->
   <servlet>
   	<servlet-name>boardView</servlet-name>
   	<servlet-class>com.board.controller.BoardView</servlet-class>
   </servlet>
   <servlet-mapping>
   	<servlet-name>boardView</servlet-name>
-  	<url-pattern>/board/view</url-pattern>
+  	<url-pattern>/</url-pattern>
   </servlet-mapping>
   <servlet>
   	<servlet-name>boardInsert</servlet-name>

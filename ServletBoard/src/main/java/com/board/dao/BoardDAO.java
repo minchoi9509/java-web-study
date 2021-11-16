@@ -138,4 +138,33 @@ public class BoardDAO {
 
 		return new BoardDTO(boardIndex, boardTitle, boardDate, boardWriter, boardContent);
 	}
+	
+	public int deleteBoard(int index) {
+		int result = 0;
+
+		Connection con = null;
+		PreparedStatement ptst = null;
+		try {
+			con = dataSource.getConnection();
+			String sql = "DELETE FROM BOARD WHERE BOARD_INDEX = ?";
+			ptst = con.prepareStatement(sql);
+			ptst.setInt(1, index);
+
+			result = ptst.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (ptst != null)
+					ptst.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+		return result;
+	}
 }

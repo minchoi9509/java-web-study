@@ -39,7 +39,7 @@
 			</tr>
 		</table>
 		<button type="button" class="btn">수정</button>
-		<button type="button" class="btn">삭제</button>
+		<button type="button" class="btn" onclick='location.href="/board/delete?index="+<%=boardDetail.getBoardIndex()%>'>삭제</button>
 	</div>
 </body>
 </html>

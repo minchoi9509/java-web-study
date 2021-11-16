@@ -116,7 +116,7 @@ public class BoardDAO {
 			ptst.setInt(1, index);
 			resultSet = ptst.executeQuery();
 
-			while (resultSet.next()) {				
+			while (resultSet.next()) {
 				boardIndex = resultSet.getInt("board_index");
 				boardTitle = resultSet.getString("board_title");
 				boardDate = resultSet.getDate("board_date");
@@ -138,7 +138,38 @@ public class BoardDAO {
 
 		return new BoardDTO(boardIndex, boardTitle, boardDate, boardWriter, boardContent);
 	}
-	
+
+	public int updateBoard(BoardDTO boardDTO) {
+		int result = 0;
+
+		Connection con = null;
+		PreparedStatement ptst = null;
+		try {
+			con = dataSource.getConnection();
+			String sql = "UPDATE BOARD SET BOARD_TITLE = ?, BOARD_CONTENT = ? WHERE BOARD_INDEX = ?";
+			ptst = con.prepareStatement(sql);
+			ptst.setString(1, boardDTO.getBoardTitle());
+			ptst.setString(2, boardDTO.getBoardContent());
+			ptst.setInt(3, boardDTO.getBoardIndex());
+
+			result = ptst.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				if (ptst != null)
+					ptst.close();
+				if (con != null)
+					con.close();
+			} catch (Exception e2) {
+				e2.printStackTrace();
+			}
+		}
+
+		return result;
+	}
+
 	public int deleteBoard(int index) {
 		int result = 0;
 

@@ -19,16 +19,19 @@ public class BoardViewDetail extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		BoardDAO boardDAO = new BoardDAO();
-		
+
 		request.setAttribute("boardDetail", boardDAO.getBoardDetail(Integer.parseInt(request.getParameter("index"))));
 
-		request.getRequestDispatcher("/WEB-INF/view/board/detail.jsp").forward(request, response);
+		if ("edit".equals(request.getParameter("type"))) {
+			request.getRequestDispatcher("/WEB-INF/view/board/updateForm.jsp").forward(request, response);
+		} else {
+			request.getRequestDispatcher("/WEB-INF/view/board/detail.jsp").forward(request, response);
+		}
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		doGet(request, response);
 	}
-
 
 }

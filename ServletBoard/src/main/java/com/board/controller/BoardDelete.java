@@ -19,8 +19,7 @@ public class BoardDelete extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		BoardDAO boardDAO = new BoardDAO();
-		
-		request.setAttribute("boardDetail", boardDAO.deleteBoard(Integer.parseInt(request.getParameter("index"))));
+		boardDAO.deleteBoard(Integer.parseInt(request.getParameter("index")));
 		response.sendRedirect("/");
 	}
 

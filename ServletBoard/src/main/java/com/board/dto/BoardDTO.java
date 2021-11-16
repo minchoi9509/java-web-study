@@ -14,6 +14,12 @@ public class BoardDTO {
 		this.boardContent = boardContent;
 	}
 
+	public BoardDTO(int boardIndex, String boardTitle, String boardContent) {
+		this.boardIndex = boardIndex;
+		this.boardTitle = boardTitle;
+		this.boardContent = boardContent;
+	}
+
 	public BoardDTO(int boardIndex, String boardTitle, Date boardDate, String boardWriter, String boardContent) {
 		this.boardIndex = boardIndex;
 		this.boardTitle = boardTitle;

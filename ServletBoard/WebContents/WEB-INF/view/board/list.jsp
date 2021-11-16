@@ -34,8 +34,8 @@
 				<% for (int i = 0; i < boardList.size(); i++) { 
 					BoardDTO board = boardList.get(i);
 				%>
-				<tr>
-					<td><%= board.getBoardIndex() %></td>
+				<tr onclick='location.href="/board/detail?index="+<%=board.getBoardIndex()%>'>
+					<td><%= i %></td>
 					<td><%= board.getBoardTitle() %></td>
 					<td><%= board.getBoardWriter() %></td>
 					<td><%= board.getBoardDate() %></td>

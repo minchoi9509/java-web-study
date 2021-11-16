@@ -23,6 +23,14 @@
   	<url-pattern>/</url-pattern>
   </servlet-mapping>
   <servlet>
+  	<servlet-name>boardViewDetail</servlet-name>
+  	<servlet-class>com.board.controller.BoardViewDetail</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>boardViewDetail</servlet-name>
+  	<url-pattern>/board/detail</url-pattern>
+  </servlet-mapping>
+  <servlet>
   	<servlet-name>boardInsert</servlet-name>
   	<servlet-class>com.board.controller.BoardInsert</servlet-class>
   </servlet>

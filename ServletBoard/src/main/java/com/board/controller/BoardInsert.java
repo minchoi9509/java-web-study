@@ -20,13 +20,8 @@ public class BoardInsert extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		
-		BoardDAO boardDAO = new BoardDAO();
-		BoardDTO boardDTO = new BoardDTO();
-		
-		boardDTO.setBoardTitle(request.getParameter("boardTitle"));
-		boardDTO.setBoardContent(request.getParameter("boardContent"));
-		
-		boardDAO.insertBoard(boardDTO);
+		BoardDAO boardDAO = new BoardDAO();		
+		boardDAO.insertBoard(new BoardDTO(request.getParameter("boardTitle"), request.getParameter("boardContent")));
 		
 		response.sendRedirect("/");
 	}

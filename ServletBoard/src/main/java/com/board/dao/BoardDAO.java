@@ -35,7 +35,7 @@ public class BoardDAO {
 			String sql = "INSERT INTO BOARD VALUES (SEQ_BOARD_IDX.nextval, ?, SYSDATE, ?, ?)";
 			ptst = con.prepareStatement(sql);
 			ptst.setString(1, boardDTO.getBoardTitle());
-			ptst.setString(2, "min");
+			ptst.setString(2, boardDTO.getBoardWriter());
 			ptst.setString(3, boardDTO.getBoardContent());
 
 			result = ptst.executeUpdate();

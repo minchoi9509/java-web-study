@@ -6,11 +6,12 @@ public class BoardDTO {
 	private int boardIndex;
 	private String boardTitle;
 	private Date boardDate;
-	private String boardWriter;
+	private String boardWriter = "min";
 	private String boardContent;
-	
-	public BoardDTO() {
-		
+
+	public BoardDTO(String boardTitle, String boardContent) {
+		this.boardTitle = boardTitle;
+		this.boardContent = boardContent;
 	}
 
 	public BoardDTO(int boardIndex, String boardTitle, Date boardDate, String boardWriter, String boardContent) {
@@ -25,40 +26,20 @@ public class BoardDTO {
 		return boardIndex;
 	}
 
-	public void setBoardIndex(int boardIndex) {
-		this.boardIndex = boardIndex;
-	}
-
 	public String getBoardTitle() {
 		return boardTitle;
-	}
-
-	public void setBoardTitle(String boardTitle) {
-		this.boardTitle = boardTitle;
 	}
 
 	public Date getBoardDate() {
 		return boardDate;
 	}
 
-	public void setBoardDate(Date boardDate) {
-		this.boardDate = boardDate;
-	}
-
 	public String getBoardWriter() {
 		return boardWriter;
 	}
 
-	public void setBoardWriter(String boardWriter) {
-		this.boardWriter = boardWriter;
-	}
-
 	public String getBoardContent() {
 		return boardContent;
-	}
-
-	public void setBoardContent(String boardContent) {
-		this.boardContent = boardContent;
 	}
 
 }
